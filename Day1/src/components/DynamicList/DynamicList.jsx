@@ -10,7 +10,7 @@ function DynamicList() {
     e.preventDefault();
     const now = new Date();
 
-    field.length > 0 &&
+    field.trim().length > 0 &&
       setListData([...listData, { count, field, date: now.toLocaleString() }]);
     setField("");
     setCount(() => count + 1);

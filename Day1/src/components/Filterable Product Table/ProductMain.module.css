@@ -1,0 +1,25 @@
+.container {
+  width: 400px;
+  margin: 24px auto;
+}
+
+.filterOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.inputTextBox {
+  padding: 4px 8px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.displayFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
