@@ -11,9 +11,12 @@ function App() {
 
   return (
     <>
+      {/* Day 1 */}
       <Counter />
       <DynamicList />
       <ProductMain />
+
+      {/* Day2 */}
       <WindorTracker />
       <div className={gstyles.container}>
         <div className={gstyles.displayFlexRow}>
@@ -27,6 +30,8 @@ function App() {
         </div>
         {showTimer && <Timer />}
       </div>
+
+      {/* Day3 */}
     </>
   );
 }
