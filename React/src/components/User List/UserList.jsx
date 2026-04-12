@@ -5,16 +5,23 @@ import Loader from "../Loader/Loader";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
 function UserList() {
+  // Having 3 states like this is industry standard, and we must follow this approach only.
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    // We have added AbortCOntroller here, which is important because it prevents memoory leak.
+    // Suppose, user opens the page, but closes te component, and now the component is unmounted, but the API call is still in progress which later will try to update a state which does not even exist, and this can lead to app crsh.
+    // There, with AbortController, we will abort the API call which is in progress and then this will avoid any such scenerio of memory leak.
+    const controller = new AbortController();
+
     async function fetchUsers() {
       setLoading(true);
       try {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/users",
+          { signal: controller.signal },
         );
 
         if (!response.ok) {
@@ -25,9 +32,13 @@ function UserList() {
         setData(result);
         setLoading(false);
       } catch (error) {
-        setError(true);
-        setLoading(false);
-        console.log(error, " - found while fetching.");
+        if (error.name === "AbortError") {
+          console.log("Fetch call aborted!");
+        } else {
+          setError(true);
+          setLoading(false);
+          console.log(error, " - found while fetching.");
+        }
       }
     }
 
