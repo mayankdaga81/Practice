@@ -43,6 +43,12 @@ function UserList() {
     }
 
     fetchUsers();
+
+    return () => {
+      // This is the most important part in case of controller as this informs the browser that this component has been unmounted, ther eis no point of making the APIO call, you can ignore that.
+      controller.abort();
+      console.log("Cleanup: Fetch aborted because component unmounted");
+    };
   }, []);
 
   function resolveAddress({ street, suite, city, zipcode }) {
