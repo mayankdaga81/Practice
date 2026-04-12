@@ -1,7 +1,7 @@
 import gstyles from "../../styles/App.module.css";
 import Loader from "../Loader/Loader";
 import ErrorPage from "../ErrorPage/ErrorPage";
-import useFetch from "../../hooks/usefetch";
+import useFetch from "../../hooks/useFetch.js";
 
 function UserList() {
   const { data, loading, error } = useFetch(
