@@ -1,4 +1,4 @@
-import gstyle from "../../App.module.css";
+import gstyle from "../../styles/App.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 

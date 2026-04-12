@@ -1,5 +1,5 @@
 import { useState } from "react";
-import gstyles from "./App.module.css";
+import gstyles from "./styles/App.module.css";
 import Counter from "./components/Counter/Counter";
 import DynamicList from "./components/DynamicList/DynamicList";
 import ProductMain from "./components/Filterable Product Table/ProductMain";

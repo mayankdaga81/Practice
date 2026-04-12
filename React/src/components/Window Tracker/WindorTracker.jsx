@@ -1,6 +1,6 @@
 // import styles from "./WindowTracker.module.css";
 import { useEffect } from "react";
-import gstyles from "../../App.module.css";
+import gstyles from "../../styles/App.module.css";
 import { useState } from "react";
 
 function WindorTracker() {

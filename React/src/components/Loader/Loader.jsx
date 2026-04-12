@@ -1,4 +1,4 @@
-import gstyles from "../../App.module.css";
+import gstyles from "../../styles/App.module.css";
 import styles from "./Loader.module.css";
 
 function Loader() {
