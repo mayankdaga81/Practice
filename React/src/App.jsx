@@ -5,6 +5,7 @@ import DynamicList from "./components/DynamicList/DynamicList";
 import ProductMain from "./components/Filterable Product Table/ProductMain";
 import Timer from "./components/The Timer/Timer";
 import WindorTracker from "./components/Window Tracker/WindorTracker";
+import UserList from "./components/User List/UserList";
 
 function App() {
   const [showTimer, setShowTimer] = useState(true);
@@ -32,6 +33,7 @@ function App() {
       </div>
 
       {/* Day3 */}
+      <UserList />
     </>
   );
 }
