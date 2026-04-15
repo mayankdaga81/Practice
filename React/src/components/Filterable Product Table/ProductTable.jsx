@@ -26,6 +26,7 @@ import styles from "./ProductTable.module.css";
  */
 
 function ProductTable({ name, availiable }) {
+  // Used useMemo here for calcuation for performance optimization.
   let productListwithId = useMemo(() => {
     return products.map((item) => ({
       ...item,

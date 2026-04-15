@@ -3,6 +3,10 @@ import styles from "./ProductMain.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
+// We have implemented the Hydartion effect here. Which is we have saved few data in the browser, which is helping us to retain few UI states. We will use the localStorage object to achieve this.
+// The benefit of doing this is, if the user refreshes the page by mistake, it will save all the filter which the user has implemented so that they do not have to start again.
+// Another benefit of using this is that, if the user opens up in a new page, they will not have to invets time again, and the browser will show them the same filter which they implemented before.
+
 function ProductMain() {
   // Step 2 - We will local the saved values from the browser on mount, every tiem this component is being rendered.
   // If we find any values there, then we will use that in the state as the default values, if not, then we will use null or mepty as teh default value which was the older case.
@@ -18,10 +22,6 @@ function ProductMain() {
     );
     return isAvailiableFromBrowser ? isAvailiableFromBrowser : false;
   });
-
-  // We have implemented the Hydartion effect here. Which is we have saved few data in the browser, which is helping us to retain few UI states. We will use the localStorage object to acheieve this.
-  // The benefit of doing this is, if the user refresghes the page by mistake, it will save all the filter which the user has implemented so that they do not have to start again.
-  // Another benefit of using this is that, if the user opens up in a new page, they will not have to invets time again, and the browser will show them the same filter which they implemented before.
 
   // Step 1 - Whenever there is any chnage in name or isAvailiable filter, we will store it in the localStorage.
   // LocalStorage only accepts strings, so in case of complex objects, we have to convert them into string before saving

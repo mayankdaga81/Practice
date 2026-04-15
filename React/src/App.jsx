@@ -32,7 +32,7 @@ function App() {
         {showTimer && <Timer />}
       </div>
 
-      {/* Day3 */}
+      {/* Day3 and Day4 */}
       <UserList />
     </>
   );
