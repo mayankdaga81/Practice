@@ -6,6 +6,7 @@ import ProductMain from "./components/Filterable Product Table/ProductMain";
 import Timer from "./components/The Timer/Timer";
 import WindorTracker from "./components/Window Tracker/WindorTracker";
 import UserList from "./components/User List/UserList";
+import ThemeSwitcher from "./components/Theme Switcher/ThemeSwitcher";
 
 function App() {
   const [showTimer, setShowTimer] = useState(true);
@@ -34,6 +35,9 @@ function App() {
 
       {/* Day3 and Day4 */}
       <UserList />
+
+      {/* Day5 */}
+      <ThemeSwitcher />
     </>
   );
 }
