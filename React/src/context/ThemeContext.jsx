@@ -2,6 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -11,7 +12,15 @@ const ThemeContext = createContext();
 
 // Step2 - Create provider function
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    const themeInMemory = localStorage.getItem("themeValue");
+
+    return themeInMemory ? themeInMemory : "light";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("themeValue", theme);
+  }, [theme]);
 
   const themeToggle = useCallback(() => {
     setTheme((theme) => (theme === "light" ? "dark" : "light"));
