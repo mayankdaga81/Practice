@@ -11,7 +11,7 @@ function SearchFocus() {
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
-      inputRef.current.backgroundColor = "yellow";
+      inputRef.current.style.backgroundColor = "yellow";
     }
   }, []);
 

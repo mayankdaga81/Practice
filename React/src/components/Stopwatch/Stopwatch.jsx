@@ -19,6 +19,11 @@ function Stopwatch() {
     infoRef.current = setInterval(() => {
       setTime((time) => time + 1);
     }, 1000);
+
+    return () => {
+      clearInterval(infoRef.current);
+      infoRef.current = null;
+    };
   }, []);
 
   function handleClick() {
