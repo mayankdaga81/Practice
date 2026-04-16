@@ -1,0 +1,11 @@
+.body {
+  background: rgb(181, 181, 181);
+  min-height: 10vh;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

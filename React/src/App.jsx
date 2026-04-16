@@ -7,6 +7,8 @@ import Timer from "./components/The Timer/Timer";
 import WindorTracker from "./components/Window Tracker/WindorTracker";
 import UserList from "./components/User List/UserList";
 import ThemeSwitcher from "./components/Theme Switcher/ThemeSwitcher";
+import SearchFocus from "./components/Search Focus/SearchFocus";
+import Stopwatch from "./components/Stopwatch/Stopwatch";
 
 function App() {
   const [showTimer, setShowTimer] = useState(true);
@@ -38,6 +40,10 @@ function App() {
 
       {/* Day5 */}
       <ThemeSwitcher />
+
+      {/* Day6 */}
+      <SearchFocus />
+      <Stopwatch />
     </>
   );
 }
